@@ -14,6 +14,8 @@ const NoteDetailPage = () => {
 
   const {id}= useParams();
 
+
+
   useEffect(()=>{
     const fetchNote = async()=>{
       try {
@@ -31,6 +33,7 @@ const NoteDetailPage = () => {
     fetchNote()
   },[id])
 
+
   
   const handleDelete = async () => {
   if (!window.confirm("Are you sure you want to delete this note?")) return;
@@ -44,6 +47,8 @@ const NoteDetailPage = () => {
     toast.error("Failed to delete note")
   }
 }
+
+
 
   const handleSave = async()=>{
     if(!note.title.trim()||!note.content.trim()){

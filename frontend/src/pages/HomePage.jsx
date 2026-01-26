@@ -6,6 +6,7 @@ import NoteCard from '../components/NoteCard';
 import api from '../lib/axios.js';
 import NotesNotFound from '../components/NotesNotFound.jsx'
 
+
 const HomePage = () => {
   const [isRateLimiter,setIsRateLimiter]=useState(true)
   const [notes,setNotes] = useState([]);
@@ -36,7 +37,12 @@ const HomePage = () => {
   fetchNotes();
 },[])
 
+
+
+
   return (
+
+    
     <div className='min-h-screen'>
       <Navbar/>
       {isRateLimiter && <RateLimitedUI/>}

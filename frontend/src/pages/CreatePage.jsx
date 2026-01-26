@@ -1,15 +1,18 @@
-
 import { ArrowLeftIcon } from 'lucide-react';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import {Link, useNavigate} from 'react-router'
 import api from '../lib/axios.js';
+
+
 const CreatePage = () => {
    const [title,setTitle]=useState("");
     const [content,setContent]=useState("");
     const [loading,setLoading]=useState(false)
 
     const navigate= useNavigate()
+
+
 
     const  handleSubmit= async(e)=>{
         e.preventDefault();
@@ -40,6 +43,11 @@ const CreatePage = () => {
           setLoading(false)
         }
     }
+
+
+
+
+    
   return (
    
     <div className='min-h-screen bg-base-200'>
