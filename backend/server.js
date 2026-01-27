@@ -35,6 +35,10 @@ app.get("/",(req,res)=>{
 }
 
 connectDb().then(()=>{
+    app.get('/', (req, res) => {
+  res.send('ThinkBoard Backend is running 🚀');
+});
+
     app.listen(PORT,()=>{
     console.log('Server running on port :',PORT);
     
