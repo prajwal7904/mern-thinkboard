@@ -1,4 +1,4 @@
-import Note from "../model/Note.js"
+import Note from "../model/note.js"
 
 export async function getNotes(_,res){
    try {
