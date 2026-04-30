@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://69f30b0d573b96669e8ab17a--brilliant-vacherin-519e6d.netlify.app"
+      
     ],
     credentials: true,
   })
