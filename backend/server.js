@@ -27,9 +27,7 @@ app.use("/api/notes",noteRoutes)
 
 
 // Root route (health check)
-app.get('/', (req, res) => {
-    res.send('ThinkBoard Backend is running 🚀');
-});
+
 
 
 connectDb().then(()=>{
