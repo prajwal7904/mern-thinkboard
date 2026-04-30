@@ -5,19 +5,22 @@ import { PenSquareIcon, Trash2Icon } from 'lucide-react'
 import toast from 'react-hot-toast';
 import api from '../lib/axios.js';
 const NoteCard = ({note,setNote}) => {
-    const handleDelete = async(e,id)=>{
-        e.preventDefault();
-        if(!window.confirm("Are you really want to delete?"))return;
-        try {
-            api.delete(`/note/${id}`)
-            setNote((prev)=>prev.filter(note=>note._id!==id))
-            toast.success("Note deleted successfully")
-        } catch (error) {
-            console.error("Error in deleting",error);
-            toast.error("Fail to delete note")
-            
-        }
-    }
+    const handleDelete = async (e, id) => {
+  e.preventDefault();
+
+  if (!window.confirm("Are you really want to delete?")) return;
+
+  try {
+    await api.delete(`/notes/${id}`);
+
+    setNote((prev) => prev.filter((note) => note._id !== id));
+
+    toast.success("Note deleted successfully");
+  } catch (error) {
+    console.error("Error in deleting", error);
+    toast.error("Fail to delete note");
+  }
+};
   return (
    <Link to={`/note/${note._id}`} className ="card bg-base-100 hover:shadow-lg transition-all duration-200 border-t-4 border-solid border-[#00FF9D]">
        <div className ="card-body">
